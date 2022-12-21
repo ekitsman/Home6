@@ -10,7 +10,7 @@ int[] CreateArray(int size)
      for(int i=0; i<size; i++)
         
         {
-            Console.Write("Введите число");
+            Console.Write("Введите число:");
             int num = Convert.ToInt32(Console.ReadLine());
             array [i]= num;
         }
@@ -25,7 +25,7 @@ void ShowArray(int[] array)
     }
 }
 
-Console.Write("Введите количество элементов в массиве:");
+Console.Write("Введите количество чисел:");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] myArray = CreateArray(size);
 ShowArray(myArray);
@@ -35,11 +35,11 @@ int kol (int[] array)
 int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-         count++;
+        if (array[i] > 0) count++;
     }
     return count;
 }
 
 int result= kol (myArray);
 
-Console.WriteLine ( $"Количество чётных чисел {result}");
+Console.WriteLine ( $"Количество чисел больше 0: {result}");
